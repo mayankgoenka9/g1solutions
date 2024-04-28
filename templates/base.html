@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>G-One Solutions</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+      <link rel="stylesheet" href="/static/css/style.css" />
+      <link rel="stylesheet" href="/static/css/mobile-style.css">
+      <link rel="shortcut icon" href= "/static/images/g1logo nobg.svg" type="image/x-icon"> 
+    </head>
+     
+     
+<body>
+  <div class="loader-wrapper">
+    <img src="/static/images/g1logo nobg.svg" alt="loading-image">
+  </div>
+   <header>
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="/">
+            <img src="/static/images/g1logo nobg.svg" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-align-right text-light"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="mr-auto"></div>
+            <ul class="navbar-nav">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+              <a href="accounts/profile/" class="nav-link"> Hello,&nbsp;{{ user.first_name }}</a>
+              </li>
+              {% endif %}
+              <li class="nav-item active">
+                <a class="nav-link" href="/">HOME
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT</a>
+              </li>
+              <li class="nav-item dropdown">
+                <div class="dropdown">
+                  <a href="#services" class="nav-link">SERVICES</a>
+                  <div class="dropdown-content">
+                    <a href="#services">Mobile Application</a>
+                    <a href="#services">Responsive Website</a>
+                    <a href="/#services">Designing</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#download">DOWNLOADS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonial">TESTIMONIALS</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item"><a href="/accounts/logout/">
+                <button class="btn btn-outline-primary" style="position: absolute;">Logout</button></a>
+                </li>
+              {% else %}
+              <li class="nav-item"><a href="/accounts/login/">
+              <button class="btn btn-outline-primary" style="position: absolute;">Login/Signup</button></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+      
+      {% block content %}
+         
+      {% endblock content %}
+         
+    </header>
+  
+ <main class="main">
+ <div id="about">{% include 'about.html' %}</div>
+ <diV id="services"> {% include 'services.html' %}</diV>
+ <div id="download"> {% include 'download.html' %} </div>
+ <div id="testimonial">{% include 'testimonial.html' %}</div>
+</main>
+ <footer>
+  <div class="container text-center" id="socialmedia">
+    <div class="col-lg-12 col-sm-12">
+      <h1 class="text-light">Follow Us</h1>
+      <p class="text-muted">Let us be social</p>
+      <div class="column text-light">
+        <a target= "_blank" href="https://www.facebook.com/mayank.goenka.3950/"><i class="fab fa-facebook-f"></i></a>
+        <a target= "_blank" href="https://www.instagram.com/imayankgoenka/"><i class="fab fa-instagram"></i></a>
+        <a target= "_blank" href="https://twitter.com/mayank672000/"><i class="fab fa-twitter"></i></a>
+        <a target= "_blank" href="https://www.linkedin.com/in/mayankgoenka9/"><i class="fab fa-linkedin"></i></a>
+        <a target= "_blank" href="https://www.github.com/mayankgoenka9/"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+   </div>
+   <div class="container-fluid p-0">
+       <div class="col-md-5 col-sm-12">
+         <h4 class="text-light">Newsletter</h4>
+         <p class="text-muted">Stay Updated</p>
+         <form class="form-inline">
+           <div class="col pl-0">
+             <div class="input-group pr-5">
+               <input type="text" class="form-control bg-dark text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+               <div class="input-group-prepend">
+                 <div class="input-group-text">
+                   <i class="fas fa-arrow-right"></i>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </form>
+       </div>
+       
+     </div>
+   </div>
+ </footer>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+   crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+   crossorigin="anonymous"></script>
+ <script src="/static/js/main.js"></script>
+ <script>
+  $(window).on("load",function(){
+    $(".loader-wrapper").delay(2000).fadeOut("slow");
+  });
+</script>
+     
+     
+   
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/mobile-style.css">
+    <link rel="stylesheet" href="/static/css/loginstyle.css" />
+    <link rel="shortcut icon" href="/static/images/g1logo nobg.svg" type="image/x-icon">
+    <title>G-One Solutions</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="/">
+                    <img src="/static/images/g1logo nobg.svg" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-right text-light"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a href="/accounts/profile/" class="nav-link"> Hello,&nbsp;{{ user.first_name }}</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">HOME
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <a href="/#services" class="nav-link">SERVICES</a>
+                                <div class="dropdown-content">
+                                    <a href="/#services">Mobile Application</a>
+                                    <a href="/#services">Responsive Website</a>
+                                    <a href="/#services">Designing</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#download">DOWNLOADS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#testimonial">TESTIMONIALS</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a href="/accounts/logout/">
+                                <button class="btn btn-outline-primary" style="position: absolute;">Logout</button></a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item"><a href="/accounts/login/">
+                                <button class="btn btn-outline-primary"
+                                    style="position: absolute;">Login/Signup</button></a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container-enquiry">
+            <div class="forms-container">
+                <div class="enquiry">
+                    <form action="/accounts/send_enquiry/" class="enquiry-form" method="POST">
+                        {% csrf_token %}
+                        <h2 class="title">Enquiry Form</h2>
+                        <div class="input-field checkbox">
+                            <input type="checkbox" name="services" id="mobile-dev" value="Mobile Development">
+                            <label for="mobile-dev">Mobile Development</label>
+                        </div>
+                        <div class="input-field checkbox">
+                            <input type="checkbox" name="services" id="website-dev" value="Website Development">
+                            <label for="website-dev">Website Development</label>
+                        </div>
+                        <div class="input-field checkbox">
+                            <input type="checkbox" name="services" id="design" value="Designing">
+                            <label for="design">Designing</label>
+                        </div>
+                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Want to ask anything else..."></textarea>
+                        <input type="submit" class="btns" value="Send Enquiry" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- <script src="/static/js/loginapp.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<section class="section-2 container-fluid p-0">
+   <div class="cover">
+     <div class="overlay"></div>
+     <div class="content text-center">
+       <h1>Some Features That Made Us Unique</h1>
+       <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, eum?
+       </p>
+     </div>
+   </div>
+   <div class="container-fluid text-center">
+     <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
+       <div class="rect">
+         <h1>2345</h1>
+         <p>Happy Client</p>
+       </div>
+       <div class="rect">
+         <h1>6784</h1>
+         <p>Cups Coffee</p>
+       </div>
+       <div class="rect">
+         <h1>1056</h1>
+         <p>Tickets Submitted</p>
+       </div>
+       <div class="rect">
+         <h1>9152</h1>
+         <p>Total Projects</p>
+       </div>
+     </div>
+   </div>
+
+
+   <div class="purchase text-center">
+     <h1>Purchase Whatever You Want</h1>
+     <p>
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+     </p>
+     <div class="cards">
+       <div class="d-flex flex-row justify-content-center flex-wrap">
+         <div class="card">
+           <div class="card-body">
+             <div class="title">
+               <h5 class="card-title">Mobile Application</h5>
+             </div>
+             <p class="card-text">
+              Mobile app development services cover end-to-end development of mobile apps, from business analysis and UI/UX design to mobile application testing and deployment or online market publication.
+              <br> We cover all stages of mobile application development and offer them both as stand-alone services and as parts of our full-cycle mobile app development.
+              <ul>
+                <li>Mobile Consulting</li>
+                <li>Mobile App Design</li>
+                <li>Mobile App Development</li>
+                <li>Backend Development</li>
+                <li>Mobile App QA and Support</li>
+                <li>Mobile App Evolution</li>
+              </ul>
+            </p><br><br><br><br>
+             <div class="pricing">
+               <h1>$77.99</h1>
+               <!--<a href="#" class="btn  btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>-->
+             </div>
+           </div>
+         </div>
+         <div class="card">
+           <div class="card-body">
+             <div class="title">
+               <h5 class="card-title">Website Development</h5>
+             </div>
+             <p class="card-text">
+              Our website developers provide expert web application development and web design services to our clients. G-One Solutions offers a variety of website design and development services, from creating mobile web development solutions and responsive website designs, to building custom e-commerce and intranet experiences using the latest and proven web technologies. With up to 85% of consumers visiting company’s or service provider’s website before making a purchase, more and more consumers make decisions based on their online experience: the appearance, usability and accessibility of your website is more important than ever, especially in an increasingly competitive market.
+             </p>
+             <div class="pricing">
+               <h1>$99.99</h1>
+               <!--<a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>-->
+             </div>
+           </div>
+         </div>
+         <div class="card">
+           <div class="card-body">
+             <div class="title">
+               <h5 class="card-title">Designs</h5>
+             </div>
+             <p class="card-text">
+              Our mission is to help businesses find the best design in the world, faster, and at a price that fits their budget. We also want to give designers the chance to earn money for their creative skills.
+              <ul>
+                <li>Website Designing</li>
+                <li>Graphic Designing</li>
+                <li>Social Media Designing</li>
+                <li>App Designing</li>
+              </ul> 
+            </p><br><br><br><br><br><br><br><br><br><br><br>
+             <div class="pricing">
+               <h1>$58.99</h1>
+               <!--<a href="#" class="btn btn-dark px-5 py-2 primary-btn mb-5">Purchase Now</a>-->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     {% if user.is_authenticated %}
+     <a href="/accounts/enquiry/"><button class="btn btn-outline-primary btn-lg">
+      Send Enquiry
+    </button></a>
+     {%else%}
+     <h1 style="font-size: 2em; padding-top: 0;">Login/Signup to Send an Enquiry.</h1>
+     {% endif %}
+   </div>
+ </section>
